@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+:root {
+  --white: rgb(255, 255, 255);
+  --bg-color: #CFFAFE;
+  --shadow-color: rgba(128, 128, 128, 0.15);
+  --text-color: #334155;
+  --button-color: #164E63;
+  --border-color: #E2E8F0;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+}
+
+#main {
+  width: 90vw;
+  max-width: 800px;
+  padding: 2rem;
+  margin: 3rem 0;
+  border-radius: 5px;
+  background-color: var(--white);
+  box-shadow: 0 5px 10px 5px var(--shadow-color);
+
+  & > #title {
+    color: var(--text-color);
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  & > .question-container {
+    border-radius: 5px;
+    border: 2px solid var(--border-color);
+    padding: 15px 20px;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    box-shadow: 0 10px 15px 3px var(--shadow-color);
+
+    & > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      & > .question {
+        text-transform: capitalize;
+        font-size: 1.3rem;
+      }
+
+      & > .show-hide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--button-color);
+        color: var(--white);
+        border-radius: 50%;
+        border: transparent;
+        min-width: 2rem;
+        min-height: 2rem;
+        font-size: 1.5rem;
+        margin-left: 2rem;
+        cursor: pointer;
+      }
+    }
+
+    & > .answer {
+      font-weight: 300;
+      margin-top: 1.75rem;
+      line-height: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  #main {
+    width: 94vw;
+    padding: 1rem;
+
+    & > #title {
+      font-size: 2.5rem;
+    }
+
+    & > .question-container {
+
+      & > div {
+        
+        & > .question {
+          font-size: 1.2rem;
+        }
+
+        & > .show-hide {
+          margin-left: 1rem;
+        }
+      }
+
+      & > .answer {
+        line-height: 1.5rem;
+      }
+    }
+  }
+}
